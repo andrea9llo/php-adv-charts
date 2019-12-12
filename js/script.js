@@ -25,6 +25,23 @@ function genGraph(elem) {
             backgroundColor: [
                 'rgba(0, 251, 34, 0.99)'
             ],
+            borderColor: [
+              'rgb(251, 0, 0)'
+            ],
+            pointBackgroundColor: [
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)',
+              'rgb(251, 0, 0)'
+            ],
         }]
     },
 });
