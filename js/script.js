@@ -44,6 +44,15 @@ function genGraph(elem) {
             ],
         }]
     },
+    options: {
+       scales: {
+           yAxes: [{
+               ticks: {
+                   beginAtZero: true
+               }
+           }]
+       }
+   }
 });
 
 }
