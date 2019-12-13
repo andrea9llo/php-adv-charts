@@ -33,15 +33,29 @@ function graphLine2Chart(data){
   var team = Object.keys(data["data"]);
   var values = Object.values(data["data"]);
   var ctx = $('#myChart3');
+  var team1 = {
+    label: team[0],
+    data: values[0],
+    borderColor:"red"
+  };
+  var team2 = {
+    label: team[1],
+    data: values[1],
+    borderColor:"blue"
+  };
+  var team3 = {
+    label: team[2],
+    data: values[2],
+    borderColor:"yellow"
+  };
+  var teams = {
+    labels:moment.months(),
+    datasets:[team1,team2,team3]
+  };
+
   var myChart = new Chart(ctx, {
     type:data["type"] ,
-    data: {
-        labels: moment.months(),
-        datasets: [{
-            label: team,
-            data:  values,
-        }]
-    },
+    data:teams,
     options: {
        scales: {
            yAxes: [{
