@@ -28,13 +28,13 @@ function printData() {
 
 }
 function geneGraphPie(type,labels,data) {
-  var ctx = document.getElementById('myChart2').getContext('2d');
+  var ctx = $('#myChart2');
   var myChart = new Chart(ctx, {
     type: type,
     data: {
         labels: labels,
         datasets: [{
-            label: labels,
+            label: "",
             data: data ,
             backgroundColor: [
              'rgba(255, 99, 132, 0.99)',
@@ -50,10 +50,10 @@ function geneGraphPie(type,labels,data) {
            ],
         }]
     },
-});
+  });
 }
 function geneGraphLine(type,data) {
-  var ctx = document.getElementById('myChart').getContext('2d');
+  var ctx = $('#myChart');
   var myChart = new Chart(ctx, {
     type: type,
     data: {
@@ -92,50 +92,7 @@ function geneGraphLine(type,data) {
            }]
        }
    }
-});
-}
-function genGraph(elem) {
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: moment.months(),
-        datasets: [{
-            label: 'vendite',
-            data:elem ,
-            backgroundColor: [
-                'rgba(0, 251, 34, 0.99)'
-            ],
-            borderColor: [
-              'rgb(251, 0, 0)'
-            ],
-            pointBackgroundColor: [
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)',
-              'rgb(251, 0, 0)'
-            ],
-        }]
-    },
-    options: {
-       scales: {
-           yAxes: [{
-               ticks: {
-                   beginAtZero: true
-               }
-           }]
-       }
-   }
-});
-
+ });
 }
 
 $(document).ready(function(){
