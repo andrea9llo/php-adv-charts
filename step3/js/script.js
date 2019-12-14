@@ -70,8 +70,11 @@ function graphLine2Chart(data){
 }
 function printData() {
   $.ajax({
-    url:"server.php",
+    url:"getAllAccess.php",
     method: "GET",
+    // data: {
+    //   access: 'clevel',
+    // },
     success: function(data) {
       graphLineChart(data["fatturato"]);
       graphPieChart(data["fatturato_by_agent"]);
