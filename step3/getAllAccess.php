@@ -6,10 +6,12 @@
   $access = $_GET["access"];
   $res = [];
       if ($access == "clevel") {
-        $res[] = $graphs;
+        $res["fatturato"] = $graphs["fatturato"];
+        $res["fatturato_by_agent"] = $graphs["fatturato_by_agent"];
+        $res["team_efficiency"] = $graphs["team_efficiency"];
       } elseif ($access == "employee") {
         $res["fatturato"] = $graphs["fatturato"];
-        $res[] = $graphs["fatturato_by_agent"];
+        $res["fatturato_by_agent"] = $graphs["fatturato_by_agent"];
       } elseif ($access == "guest") {
         $res["fatturato"] = $graphs["fatturato"];
       }

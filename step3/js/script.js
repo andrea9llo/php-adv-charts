@@ -9,15 +9,6 @@ function graphCharts(targetId,type,labels,label,data) {
             data: data ,
         }]
     },
-    options: {
-       scales: {
-           yAxes: [{
-               ticks: {
-                   beginAtZero: true
-               }
-           }]
-       }
-   }
   });
 }
 function graphLineChart(data) {
@@ -68,14 +59,22 @@ function graphLine2Chart(data){
   });
 
 }
+function getAccessGraph() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var accessParam = urlParams.get("access");
+  return accessParam;
+
+}
 function printData() {
+  var access = getAccessGraph();
   $.ajax({
     url:"getAllAccess.php",
     method: "GET",
-    // data: {
-    //   access: 'clevel',
-    // },
+    data: {
+      access: access,
+    },
     success: function(data) {
+      console.log(data);
       graphLineChart(data["fatturato"]);
       graphPieChart(data["fatturato_by_agent"]);
       graphLine2Chart(data["team_efficiency"]);
